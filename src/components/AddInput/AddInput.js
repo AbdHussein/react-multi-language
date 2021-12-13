@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import "./AddInput.css"
 import { v4 } from "uuid"
-import TodoList from '../TodoList/TodoList'
+import { useTranslation } from 'react-i18next'
 
 function AddInput({
     setTodos, todos
 }) {
-
+    const { t, i18n } = useTranslation()
     const [todo, setTodo] = useState("")
 
     const addTodo = () => {
@@ -28,13 +28,13 @@ function AddInput({
                 className="input" 
                 value={todo} 
                 onChange={(e) => setTodo(e.target.value)}
-                placeholder="Add a new task here..."
+                placeholder={t('addPlaceholder')}
             />
             <button 
                 className="add-btn"
                 onClick={addTodo}
             >
-                Add
+                {t('addBtn')}
             </button>
         </div>
     )

@@ -1,7 +1,8 @@
+import { useTranslation } from "react-i18next";
 import {Link} from "react-router-dom";
 
 function FollowersListComponent({followers}) {
-
+    const { t } = useTranslation()
     return (
 
         <div className="followerslist-container">
@@ -19,7 +20,7 @@ function FollowersListComponent({followers}) {
                 ))}
             </div>
             <div className="todo-footer">
-                <Link to="/" >Go Back</Link>
+                <Link to="/" >{t('back')}</Link>
             </div>
         </div>
     );
